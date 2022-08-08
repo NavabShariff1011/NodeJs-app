@@ -4,7 +4,7 @@
   "description": "This Project explains all Node JS examples",
   "main": "app.js",
   "publishConfig": {
-    "registry": "https://github.com/navabshariff1011/NodeJs-app.git"
+    "registry": "http://ec2-13-233-77-69.ap-south-1.compute.amazonaws.com:8080/repository/nodejs/"
   },
   "scripts": {
     "server": "http-server -c-1 -p 9999",
