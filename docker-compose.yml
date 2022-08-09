@@ -6,3 +6,11 @@ services:
        ports:
        - "3000:3000"
        restart: always
+       depends_on: 
+       - redis
+   redis:
+       container_name: nodedb
+       image: "redis:alpine"
+       ports:
+       - "6379:6379"
+             
