@@ -1,0 +1,15 @@
+version: '3'
+services:
+        web:
+            container_name: mynodejs
+            image: "${deployimage}"
+            ports:
+            - "3000:3000"
+            restart: always
+            depends_on: 
+             - redis
+        redis:
+            container_name: mynodedb
+            image: "redis:alpine"
+            ports:
+            - "6379:6379"          
