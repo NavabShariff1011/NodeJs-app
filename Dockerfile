@@ -2,7 +2,7 @@ FROM node:14
 
 WORKDIR /usr/src/app
 
-RUN npm install nodejsexample@1.0.0
+ADD nodejs.tgz .
 
 EXPOSE 3000
 
