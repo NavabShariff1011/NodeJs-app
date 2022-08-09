@@ -22,7 +22,7 @@ test_container()
    if [ ${TC} == "HttpCheck" ]; then
      curl -is --max-redirs 10 http://$TURL -L | grep -w "200 OK"
    else
-     docker exec wezvadevdb redis-cli --version
+     docker exec nodedb redis-cli --version
    fi
 
    if [ $? -ne "0" ]; then
