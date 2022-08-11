@@ -17,7 +17,9 @@ pipeline {
         }
         stage('validating commit') {
             agent { label 'build' }
-            
+                when {
+                changeset "src/**"
+            }            
             steps {
                 script {
                     env.BUILDME = "yes" 
