@@ -1,10 +1,13 @@
-FROM node:14
+FROM node:14-alpine as BUILD
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-ADD nodejs.tgz .
+COPY package.json .
+RUN npm install
 
-EXPOSE 3000
-
-CMD ["node", "src/app.js"]
+FROM node:14-alpine
+WORKDIR /app
+COPY src/app.js .
+COPY --from=BUILD /app/node_modules/ /app/node_modules/
+ENTRYPOINT ["node", "app.js"]
 
